@@ -80,7 +80,7 @@ public class Ejerc02Application {
 			}
 
 			Persona persona2 = Persona.builder()
-					.nombre("Alberto")
+					.nombre("Roberto")
 					.apellido("Silvestre")
 					.edad(53)
 					.build();
