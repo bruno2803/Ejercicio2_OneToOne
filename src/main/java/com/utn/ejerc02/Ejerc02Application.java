@@ -24,13 +24,13 @@ public class Ejerc02Application {
 		return args -> {
 			System.out.println("-----------------ESTOY FUNCIONANDO---------");
 			Persona persona = Persona.builder()
-					.nombre("Bruno")
-					.apellido("Padilla")
+					.nombre("Pedro")
+					.apellido("Garcia")
 					.edad(20)
 					.build();
 
 			Domicilio domicilio = Domicilio.builder()
-					.calle("Joaquin V. Gonzalez")
+					.calle("Las cañuelas")
 					.numero(938)
 					.build();
 
@@ -49,6 +49,62 @@ public class Ejerc02Application {
 				System.out.println("Edad: " + personaRecuperada.getEdad());
 				System.out.println("Calle : " + personaRecuperada.getDomicilio().getCalle());
 				System.out.println("Número :" + personaRecuperada.getDomicilio().getNumero());
+			}
+
+			Persona persona1 = Persona.builder()
+					.nombre("Victoria")
+					.apellido("Redondo")
+					.edad(34)
+					.build();
+
+			Domicilio domicilio1 = Domicilio.builder()
+					.calle("Bransen")
+					.numero(435)
+					.build();
+
+			// Asocio el domicilio
+			persona1.setDomicilio(domicilio1);
+
+			// Guardar el objeto Persona en la base de datos
+
+			personaRepository.save(persona1);
+
+			// Recuperar el objeto Persona desde la base de datos
+			Persona personaRecuperada1 = personaRepository.findById(persona1.getId()).orElse(null);
+			if (personaRecuperada1 != null) {
+				System.out.println("Nombre: " + personaRecuperada1.getNombre());
+				System.out.println("Apellido: " + personaRecuperada1.getApellido());
+				System.out.println("Edad: " + personaRecuperada1.getEdad());
+				System.out.println("Calle : " + personaRecuperada1.getDomicilio().getCalle());
+				System.out.println("Número :" + personaRecuperada1.getDomicilio().getNumero());
+			}
+
+			Persona persona2 = Persona.builder()
+					.nombre("Alberto")
+					.apellido("Silvestre")
+					.edad(53)
+					.build();
+
+			Domicilio domicilio2 = Domicilio.builder()
+					.calle("Av. Corrientes")
+					.numero(1043)
+					.build();
+
+			// Asocio el domicilio
+			persona2.setDomicilio(domicilio2);
+
+			// Guardar el objeto Persona en la base de datos
+
+			personaRepository.save(persona2);
+
+			// Recuperar el objeto Persona desde la base de datos
+			Persona personaRecuperada2 = personaRepository.findById(persona2.getId()).orElse(null);
+			if (personaRecuperada2 != null) {
+				System.out.println("Nombre: " + personaRecuperada2.getNombre());
+				System.out.println("Apellido: " + personaRecuperada2.getApellido());
+				System.out.println("Edad: " + personaRecuperada2.getEdad());
+				System.out.println("Calle : " + personaRecuperada2.getDomicilio().getCalle());
+				System.out.println("Número :" + personaRecuperada2.getDomicilio().getNumero());
 			}
 
 		};
