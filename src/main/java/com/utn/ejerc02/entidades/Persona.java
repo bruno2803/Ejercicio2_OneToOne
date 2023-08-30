@@ -27,7 +27,7 @@ public class Persona implements Serializable {
     private int edad;
 
     //relacion one to one unidireccional
-    //el cascadeo propaga las operaciones y orpa asegura
+    //el cascadeo propaga las operaciones
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "domicilio_id")
     private Domicilio domicilio;
